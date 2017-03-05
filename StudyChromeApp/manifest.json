@@ -1,0 +1,20 @@
+﻿{
+  "name": "自动学习",
+  "manifest_version": 2,
+  "version": "1.0",
+  "description":"自动学习",
+  "browser_action": {
+    "default_icon": "1.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://learning.uestcedu.com/*","http://learning.uestcedu.com/*"],
+      "js": ["jquery-1.4.3.min.js",
+		
+	   "script.js"],
+	   "run_at": "document_start" 
+    }
+  ],
+  "permissions": ["*://*/*","tabs"] 
+}

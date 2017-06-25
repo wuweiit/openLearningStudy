@@ -22,7 +22,7 @@
  * @param answerStr
  */
 function doHomework(answerStr){
-    var ans = answerStr.split(",");// 答案列表
+    var ans = answerStr.split("|");// 答案列表
     var questionNode = $("#tblDataList>tbody");
     var rows = questionNode.rows;
 
@@ -51,6 +51,6 @@ function doHomework(answerStr){
 }
 
 // 做作业吧
-doHomework("D,B,B,B,C,C,B,C,B,D,A,D,D,C,A,B,B,B,A,D");
+doHomework("D|B|B|B|C|C|B|C|B|D|A|D|D|C|A|B|B|B|A|D");
 
 

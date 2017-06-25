@@ -33,4 +33,4 @@ for(var i=0; i<rows.length; i++){
 
     results.push(result);
 }
-console.log(results.join(","))
+console.log(results.join("|"))

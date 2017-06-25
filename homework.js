@@ -11,8 +11,20 @@ var listTable = $("#_block_content_exam_1>form>table>tbody")
 var rows = listTable.rows;
 var results = [];
 for(var i=0; i<rows.length; i++){
+    console.log("current index "+ i)
     var item = rows[i];
-    var text = item.children[1].children[1].children[0].children[1].children[0].children[1].innerText
+    
+    var tagName = item.children[1].children[1].children[0].children[1].children[0].children[0].tagName;
+    var text = "";
+    console.log("current tagName= "+ tagName)
+    if("SPAN" == tagName){
+       text = item.children[1].children[1].children[0].children[1].children[0].children[0].children[0].children[1].innerText;
+    }else{
+       text = item.children[1].children[1].children[0].children[1].children[0].children[1].innerText;
+    }
+
+    
+   
     // "[参考答案：B]  分值：5"
 
     var index_a = text.indexOf("：")+1;

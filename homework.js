@@ -18,7 +18,12 @@ for(var i=0; i<rows.length; i++){
     var text = "";
     console.log("current tagName= "+ tagName)
     if("SPAN" == tagName){
-       text = item.children[1].children[1].children[0].children[1].children[0].children[0].children[0].children[1].innerText;
+        try{
+            text = item.children[1].children[1].children[0].children[1].children[0].children[0].children[0].children[1].innerText;
+        } catch(e) {}
+        try{
+            item.children[1].children[1].children[0].children[1].children[0].children[0].children[1].innerText;
+        } catch(e) {}
     }else{
        text = item.children[1].children[1].children[0].children[1].children[0].children[1].innerText;
     }

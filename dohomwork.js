@@ -38,18 +38,29 @@ function doHomework(answerStr){
 
                 console.log(i+".单选题:"+right);
 
-                var rightIndex = right.charCodeAt() - 65;
+                var rightIndex = right.charCodeAt() - 65;// 0开始
                 // 答案里列表
                 var answerListNode = item.children[0].children[0].children[0].children[0].children[1].children[1].children[0].children[1].children[0].children[0].children[0].children[0]
+                if(answerListNode.children.length == 1){
+                    // 选中答案
+                    try{// 尝试选择判断题/单选题
+                        if(rightIndex == 0){
+                            answerListNode.children[0].children[0].children[0].click();
+                        } else if(rightIndex == 1){
+                            answerListNode.children[0].children[3].children[0].click();
+                        } else if(rightIndex == 2){
+                            answerListNode.children[0].children[6].children[0].click();
+                        } else if(rightIndex == 3){
+                            answerListNode.children[0].children[9].children[0].click();
+                        }
+                    }catch(e){}
 
-                // 选中答案
-                try{// 尝试选择判断题
-                    answerListNode.rows[rightIndex].children[0].children[0].click();
-                }catch(e){}
-                // 尝试选择单选题
-                try{
-                    answerListNode.rows[rightIndex].children[0].children[0].click();
-                }catch(e){}
+                }else{//
+                    // 选中答案
+                    try{// 尝试选择判断题/单选题
+                        answerListNode.rows[rightIndex].children[0].children[0].click();
+                    }catch(e){}
+                }
 
 
             }else{// 多选题

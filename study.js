@@ -8,7 +8,7 @@
 
 /* 全局变量配置 */
 var STUDY_DELAY_TIME  = 1; // 延时启动。单位：秒
-var STUDY_PERIOD_TIME = 5; // 下一章节周期 单位：分钟
+var STUDY_PERIOD_TIME = 5; // 下一章节周期 单位：秒
 
 
 

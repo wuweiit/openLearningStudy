@@ -1,17 +1,54 @@
 ﻿
-<style type="text/css">
-*{margin:0;padding:0;}
-body{color:#333;overflow: hidden;margin: 0px;padding:5px;background: white;font-size:12px;}
-img{margin:0 4px;}
-#addItemDiv{color:#ccc;}
-#taskItemList{ width:120px;}
-.hide{display:none;}
-.show{display:block;}
-.taskItem{cursor:pointer;}
-input{width:100%;} 
-</style>
-<div id="taskItemList"> 
-    <div id="taskItem" class="taskItem" onClick="autoStart()">
-        <label class="on"></label><span class="taskTitle">开启自动学习</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="lib/jquery-1.4.3.min.js" type="text/javascript" ></script>
+    <script src="js/script.js" type="text/javascript" ></script>
+
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        body{color:#333;overflow: hidden;margin: 0px;padding:5px;background: white;font-size:12px;}
+        img{margin:0 4px;}
+        #addItemDiv{color:#ccc;}
+        #taskItemList{ width:120px;}
+        .hide{display:none;}
+        .show{display:block;}
+        .taskItem{
+            cursor:pointer;
+            height: 30px;
+            line-height: 30px;
+            padding: 0 10px;
+        }
+        .taskItem:hover{
+            background: #d7d3d5;
+        }
+        .taskItem:hover > label{
+            color: #ffffff;
+
+        }
+        input{width:100%;}
+    </style>
+</head>
+
+
+
+
+<body>
+
+    <div id="taskItemList">
+        <div class="taskItem" id="onlineStudy">
+            <label class="on"></label><span class="taskTitle">在线学习平台</span>
+        </div>
+        <div class="taskItem" id="mybutton">
+            <label class="on"></label><span class="taskTitle">GitHub地址</span>
+        </div>
+        <div class="taskItem" id="site">
+            <label class="on"></label><span class="taskTitle">作者：marker</span>
+        </div>
     </div>
-</div>
+
+</body>
+</html>

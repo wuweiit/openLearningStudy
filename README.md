@@ -8,10 +8,10 @@
 http://www.56.com/u16/v_MTQ0Mjg2MjEz.html
 
 - 自动作业：
-http://www.yl-blog.com/article/534.html
+http://www.yl-blog.com/article/523.html
 
 - 自动学习：
-http://www.yl-blog.com/article/523.html
+http://www.yl-blog.com/article/534.html
 
 
 # 时间配置建议

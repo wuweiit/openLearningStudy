@@ -33,7 +33,7 @@ Chrome插件配置的视频学习时间延时为30秒，请保证网速的情况
 
 # 关于Chrome插件的使用
 
-可以通过邮件方式联系我，邮箱地址：admin<at>wuweibi.com
+可以通过邮件方式联系我，邮箱地址：admin@wuweibi.com
 
 
 # 更新记录

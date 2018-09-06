@@ -7,6 +7,13 @@
 # 视频教程地址
 http://www.56.com/u16/v_MTQ0Mjg2MjEz.html
 
+- 自动作业：
+http://www.yl-blog.com/article/534.html
+
+- 自动学习：
+http://www.yl-blog.com/article/523.html
+
+
 # 时间配置建议
 
 一般学习要求：最少要求学习60秒。配置为60并不一定能学完，因为有网页资源加载的时间或者电脑卡顿造成的。因此时间周期配置尽量多点。

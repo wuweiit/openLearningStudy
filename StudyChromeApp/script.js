@@ -7,12 +7,11 @@ if(els.length > 0){
 
     console.log("找到了下一个按钮！");
 
-    // startStudy();
 
     setTimeout(function(){
 
-        var time = getTime();
-        startStudy(time);
+        // var time = getTime();
+        startStudy();
 
 
     }, 1000);
@@ -37,10 +36,20 @@ function getTime(){
 
 
 /**
+ * 获取当前的学习进度是否完成
+ * @returns {*|jQuery}
+ */
+function getStatus(){
+    var span = $(window.parent["w_lms_content"].document).find("#tdRemark span");
+    return $(span).hasClass("completed");
+}
+
+
+/**
  * 开始学习
  * @param time
  */
-function startStudy(time) {
+function startStudy() {
 
     /**
      * 该自动学习脚本仅用于学习研究，未经作者同意不得用于商业用途。
@@ -50,9 +59,6 @@ function startStudy(time) {
      * @type {number}
      */
 
-    /* 全局变量配置 */
-    var STUDY_DELAY_TIME  = 1; // 延时启动。单位：秒
-    var STUDY_PERIOD_TIME = time + delayTime; // 下一章节周期 单位：秒
 
 
 
@@ -60,34 +66,47 @@ function startStudy(time) {
      * 自动学习函数
      */
     var myInterval;
+    var i = 0;
     function study(){
-        console.log("学习完成，准备下一章节...")
-        console.log(window.JQUERY_CUSTERM );
-        // 10秒后开始
-        if(window.JQUERY_CUSTERM ("#btnNext")){
-            console.log("进入下一章节...")
-            window.JQUERY_CUSTERM("#btnNext").click();
+        i++;
+        console.log("自动正在学习中...");
 
-            // 清楚定时任务
-            clearTimeout(myInterval);
+        if(!($("#StudyStatus").length > 0)){
+            $('body').append("<div id='StudyStatus' style='position: fixed; z-index: 11111;font-weight: bold; bottom: 30px; left: 6px; color: red'>自动正在学习中...</div>")
+        }
 
-
-            setTimeout(function(){
-
-                // 获取当前课程需要的时间
-                STUDY_PERIOD_TIME = getTime() + delayTime;
+        if((i%2)==1){
+            $('#StudyStatus').text('自动正在学习中...');
+        } else{
+            $('#StudyStatus').text('自动正在学习中');
+        }
 
 
-                startRun();
+        if (getStatus()){ // 判断是否学习完成
+            console.log("学习完成...");
+
+            if(window.JQUERY_CUSTERM ("#btnNext")){
+                console.log("进入下一章节...")
+                window.JQUERY_CUSTERM("#btnNext").click();
+
+                // 清除定时任务
+                clearInterval(myInterval);
+
+                // 延时执行
+                setTimeout(function(){
+                    startRun();
+                }, 1000);
 
 
-            }, 1000);
+            }else{
+                console.error("没有找到【下一个】按钮");
+                console.log("正在关闭周期循环管理器！");
+                clearInterval(myInterval);
 
+                $("#StudyStatus").css("color","green");
+                $("#StudyStatus").html("学习完成!");
+            }
 
-        }else{
-            console.error("没有找到【下一个】按钮");
-            console.log("正在关闭周期循环管理器！");
-            clearTimeout(myInterval);
         }
     };
 
@@ -95,7 +114,7 @@ function startStudy(time) {
     function startRun(){
         console.log("【下一个】按钮获取焦点")
         window.JQUERY_CUSTERM("#btnNext", window.frames['w_main']).focus();
-        myInterval = setTimeout(study, STUDY_PERIOD_TIME * 1000);
+        myInterval = setInterval(study, 1000);
     }
 
 
@@ -103,7 +122,10 @@ function startStudy(time) {
     console.log("自动学习脚本启动...");
 
 
-    setTimeout(startRun, STUDY_DELAY_TIME * 1000);
+
+
+
+    setTimeout(startRun, 1000);
 
 
 

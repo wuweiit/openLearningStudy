@@ -75,7 +75,7 @@ function startStudy() {
         console.log("自动正在学习中...");
 
         if(!($("#StudyStatus").length > 0)){
-            $('body').append("<div id='StudyStatus' style='background: #e1dfe2;  width: 100%;  text-align: center;position: fixed; z-index: 11111;font-weight: bold; bottom: 30px;  color: red'>自动正在学习中...</div>")
+            $('body').append("<div id='StudyStatus' style='height: 30px; line-height: 30px;background: #e1dfe2;  width: 100%;  text-align: center;position: fixed; z-index: 11111;font-weight: bold; bottom: 0px;  color: red'>自动正在学习中...</div>")
         }
 
         if((i%2)==1){

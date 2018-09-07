@@ -40,8 +40,11 @@ function getTime(){
  * @returns {*|jQuery}
  */
 function getStatus(){
-    var span = $(window.parent["w_lms_content"].document).find("#tdRemark span");
-    return $(span).hasClass("completed");
+    var html = $(window.parent["w_lms_content"].document).find("#tdRemark")[0].innerHTML;
+    if(html && html.indexOf("completed") != -1){
+        return true;
+    }
+    return false;
 }
 
 
@@ -72,13 +75,13 @@ function startStudy() {
         console.log("自动正在学习中...");
 
         if(!($("#StudyStatus").length > 0)){
-            $('body').append("<div id='StudyStatus' style='position: fixed; z-index: 11111;font-weight: bold; bottom: 30px; left: 6px; color: red'>自动正在学习中...</div>")
+            $('body').append("<div id='StudyStatus' style='background: #e1dfe2;  width: 100%;  text-align: center;position: fixed; z-index: 11111;font-weight: bold; bottom: 30px;  color: red'>自动正在学习中...</div>")
         }
 
         if((i%2)==1){
-            $('#StudyStatus').text('自动正在学习中...');
+            $('#StudyStatus').html('自动正在学习中...');
         } else{
-            $('#StudyStatus').text('自动正在学习中');
+            $('#StudyStatus').html('自动正在学习中&nbsp; &nbsp;');
         }
 
 

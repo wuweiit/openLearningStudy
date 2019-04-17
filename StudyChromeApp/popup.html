@@ -13,7 +13,7 @@
         body{color:#333;overflow: hidden;margin: 0px;padding:5px;background: white;font-size:12px;}
         img{margin:0 4px;}
         #addItemDiv{color:#ccc;}
-        #taskItemList{ width:120px;}
+        #taskItemList{ width: 240px;}
         .hide{display:none;}
         .show{display:block;}
         .taskItem{
@@ -25,11 +25,21 @@
         .taskItem:hover{
             background: #d7d3d5;
         }
-        .taskItem:hover > label{
-            color: #ffffff;
+
+        .model{
 
         }
-        input{width:100%;}
+        .model-lw{
+            height: 60px;
+            color: #333333;
+        }
+        .model-lw:hover{
+            background: white;
+        }
+        .model-lw label{
+            cursor:pointer;
+        }
+        /*input{width:100%;}*/
     </style>
 </head>
 
@@ -45,6 +55,18 @@
         <div class="taskItem" id="mybutton">
             <label class="on"></label><span class="taskTitle">GitHub地址</span>
         </div>
+
+        <div class="taskItem model-lw" id="myModel" >
+
+            <label class="model"><input id="model_1" type="radio" name="model" value="1" checked> 自动模式</label>
+            <label class="model" ><input id="model_2" type="radio" name="model" value="2"> 周期模式</label>
+            <br>
+            <div id="inputTimeRoundEl">
+            周期： <input id="inputTimeRound" type="text" value="80" /> 秒
+            </div>
+
+        </div>
+
         <div class="taskItem" id="site">
             <label class="on"></label><span class="taskTitle">作者：marker</span>
         </div>

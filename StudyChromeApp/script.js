@@ -16,7 +16,17 @@ if(els.length > 0){
 
     }, 1000);
 }
-
+else {
+    setTimeout(function () {
+        var link = $('a', $('.notattempt').first().parents('tr').first());
+        if (link.length < 1) {
+            link = $('a', $('.incomplete').first().parents('tr').first());
+        }
+        if (link.length > 0) {
+            link[0].click();
+        }
+    }, 2000);
+}
 
 /**
  * 获取学习时间

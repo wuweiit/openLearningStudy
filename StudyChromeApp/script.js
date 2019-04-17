@@ -7,13 +7,13 @@ chrome.storage.local.get('mode',function(str){
     model = str.mode;
 
 
-   if(model == 1){
-       console.log("自动学习模式。。。");
-       mode1();
-   } else if(mode = 2) {
+    if(model == 1){
+        console.log("自动学习模式。。。");
+        mode1();
+    } else if(mode = 2) {
         console.log("周期学习模式。。。");
-       mode2();
-   }
+        mode2();
+    }
 });
 
 
@@ -34,6 +34,16 @@ function mode1() {
 
 
         }, 1000);
+    }  else {
+        setTimeout(function () {
+            var link = $('a', $('.notattempt').first().parents('tr').first());
+            if (link.length < 1) {
+                link = $('a', $('.incomplete').first().parents('tr').first());
+            }
+            if (link.length > 0) {
+                link[0].click();
+            }
+        }, 2000);
     }
 
 

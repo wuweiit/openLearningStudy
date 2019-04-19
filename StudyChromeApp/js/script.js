@@ -77,6 +77,11 @@ $(function(){
     });
 
 
+    $("#myModelWrite").click(function(){
+
+        chrome.storage.local.set({'writeAnswert': Math.random()*1000000});
+
+    });
 
 });
 

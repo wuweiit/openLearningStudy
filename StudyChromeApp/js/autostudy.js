@@ -1,20 +1,26 @@
 ﻿
+var test = parent.document.getElementById("w_code");
+if(test){
 
-
-var model = 1;
-
-chrome.storage.local.get('mode',function(str){
-    model = str.mode;
-
-
-    if(model == 1){
-        console.log("自动学习模式。。。");
-        mode1();
-    } else if(mode = 2) {
-        console.log("周期学习模式。。。");
-        mode2();
+    // 判断是不是左边的树
+    if($("#divTree").length > 0){
+        var model = 1;
+        chrome.storage.local.get('mode',function(str){
+            model = str.mode;
+            if(model == 1){
+                console.log("自动学习模式。。。");
+                mode1();
+            } else if(mode = 2) {
+                console.log("周期学习模式。。。");
+                mode2();
+            }
+        });
     }
-});
+}
+
+
+
+
 
 
 /**
@@ -178,10 +184,14 @@ function mode2(){
      */
     chrome.storage.onChanged.addListener(function callback(changes, name){
         if('local' == name){
-            STUDY_PERIOD_TIME = changes.time.newValue;
+            if(changes.time){
 
-            clearInterval(myInterval);
-            myInterval = setInterval(study, STUDY_PERIOD_TIME   * 1000);
+                STUDY_PERIOD_TIME = changes.time.newValue;
+
+                clearInterval(myInterval);
+                myInterval = setInterval(study, STUDY_PERIOD_TIME   * 1000);
+
+            }
         }
     });
 

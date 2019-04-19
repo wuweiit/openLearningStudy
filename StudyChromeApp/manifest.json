@@ -9,8 +9,8 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://*/*","http://learning.uestcedu.com/*"],
-      "js": ["lib/jquery-1.4.3.min.js", "script.js"],
+      "matches": ["http://learning.uestcedu.com/*"],
+      "js": ["lib/jquery-1.4.3.min.js", "js/autostudy.js", "js/homework.js"],
 	   "run_at": "document_end"
       ,
       "all_frames": true

@@ -1,7 +1,7 @@
 ﻿{
   "name": "OpenLearning自动学习",
   "manifest_version": 2,
-  "version": "1.0",
+  "version": "0.0.5",
   "description":"自动学习插件支持OpenLearning网络学习平台课程自动学习，进入一个课程自动判断学习状态进入下一个视频。",
   "browser_action": {
     "default_icon": "images/logo.png",

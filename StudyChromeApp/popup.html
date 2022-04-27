@@ -1,44 +1,98 @@
-﻿
+﻿<!--
+ * @Author: jiu yin
+ * @Date: 2022-04-26 11:40:10
+ * @LastEditTime: 2022-04-26 13:39:25
+ * @LastEditors: jiu yin zhen jing
+ * @FilePath: \openLearningStudy\StudyChromeApp\popup.html
+ * jiu
+-->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <script src="lib/jquery-1.4.3.min.js" type="text/javascript" ></script>
-    <script src="js/script.js" type="text/javascript" ></script>
+    <script src="lib/jquery-1.4.3.min.js" type="text/javascript"></script>
+    <script src="js/script.js" type="text/javascript"></script>
 
     <style type="text/css">
-        *{margin:0;padding:0;}
-        body{color:#333;overflow: hidden;margin: 0px;padding:5px;background: white;font-size:12px;}
-        img{margin:0 4px;}
-        #addItemDiv{color:#ccc;}
-        #taskItemList{ width: 240px;}
-        .hide{display:none;}
-        .show{display:block;}
-        .taskItem{
-            cursor:pointer;
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            color: #333;
+            overflow: hidden;
+            margin: 0px;
+            padding: 5px;
+            background: white;
+            font-size: 12px;
+        }
+
+        img {
+            margin: 0 4px;
+        }
+
+        #addItemDiv {
+            color: #ccc;
+        }
+
+        #taskItemList {
+            width: 240px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .taskItem {
+            cursor: pointer;
             height: 30px;
             line-height: 30px;
             padding: 0 10px;
         }
-        .taskItem:hover{
+
+        .taskItem:hover {
             background: #d7d3d5;
         }
 
-        .model{
+        .model {}
 
-        }
-        .model-lw{
+        .model-lw {
             height: 60px;
             color: #333333;
         }
-        .model-lw:hover{
+
+        .model-lw:hover {
             background: white;
         }
-        .model-lw label{
-            cursor:pointer;
+
+        .model-lw label {
+            cursor: pointer;
         }
+
+        #inputTimeRoundEl {
+            display: flex;
+        }
+
+        #inputTimeRoundEl input {
+            width: 90px;
+            margin: 0 5px;
+        }
+
+        #inputTimeRoundEl button {
+            background-color: #fff;
+            padding: 0 5px;
+        margin-left: 5px;
+        }
+
         /*input{width:100%;}*/
     </style>
 </head>
@@ -56,16 +110,16 @@
             <label class="on"></label><span class="taskTitle">GitHub地址</span>
         </div>
 
-        <div class="taskItem model-lw" id="myModel" >
+        <div class="taskItem model-lw" id="myModel">
 
             <label class="model"><input id="model_1" type="radio" name="model" value="1" checked> 自动模式</label>
-            <label class="model" ><input id="model_2" type="radio" name="model" value="2"> 周期模式</label>
+            <label class="model"><input id="model_2" type="radio" name="model" value="2"> 周期模式</label>
             <br>
             <div id="inputTimeRoundEl">
-            周期： <input id="inputTimeRound" type="text" value="80" /> 秒
+                周期： <input id="inputTimeRound" type="text" value="80" /> 秒 <button>确定</button>
             </div>
         </div>
-        <div class="taskItem" id="myModelWrite" >
+        <div class="taskItem" id="myModelWrite">
             <label class="on"></label><span class="taskTitle">写入答案</span>
         </div>
 
@@ -75,4 +129,5 @@
     </div>
 
 </body>
+
 </html>
